@@ -29,39 +29,48 @@
         width: 240px;
         height: 15px;
       }
+      img{
+        margin: 0 auto;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <h1>REPRODUCTOR</h1>
-    </header>
-
-    <audio src="" id="audio" ontimeUpdate="avanceBarra();"></audio>
-
-    <select class="" name="" id="selecCancion" onchange="cambiarCancion()" >
-      <option value="0">Seleccione una cancion</option>
-      <option value="1">Cumbia Ninja - subir al infierno</option>
-      <option value="2">Alejandra Guzmán - Aunque Me Mientas</option>
-      <option value="3">Aural - Te Quiero lyrics</option>
-      <option value="4">David Bisbal - Diez Mil Maneras</option>
-      <option value="5">Katy Perry - Roar </option>
-    </select><br/>
-    <img src="" align="center" id="imagenCancion" alt="" width="200px" height="200px"  hidden=""><br>
+    <article class="" align="center">
+      <audio src="" id="audio" ontimeUpdate="avanceBarra();"></audio>
+      <header>
+        <h1>REPRODUCTOR</h1>
+      </header>
 
 
-    <progress id="avance" type="range" value="0" min="0" max="" width="310px" height="10"/></progress></br>
-    <button type="button" id="play" onclick="reproducir();">Play</button>
-    <button type="button" id="pause" onclick="pausar();" >Pause</button>
-    <button type="button" id="stop" onclick="parar();" >Stop</button>
+      <section >
+        <select class="" name="" id="selecCancion" onchange="cambiarCancion()" >
+          <option value="0">Seleccione una cancion</option>
+          <option value="1">Cumbia Ninja - subir al infierno</option>
+          <option value="2">Alejandra Guzmán - Aunque Me Mientas</option>
+          <option value="3">Aural - Te Quiero lyrics</option>
+          <option value="4">David Bisbal - Diez Mil Maneras</option>
+          <option value="5">Katy Perry - Roar </option>
+        </select><br/>
+        <img src="" id="imagenCancion" alt="" width="200px" height="200px"  hidden="">
+        <progress id="avance" type="range" value="0" min="0" max="" width="310px" height="10"/></progress>
+      </section>
 
-    <button type="button" id="adelantar" onclick="adelantar();"> >>> </button>
-    <button type="button" id="retroceder" onclick="retroceder();"> <<< </button><br/>
+      <section>
+        <button type="button" id="play" onclick="reproducir();">Play</button>
+        <button type="button" id="pause" onclick="pausar();" >Pause</button>
+        <button type="button" id="stop" onclick="parar();" >Stop</button>
+        <button type="button" id="retroceder" onclick="retroceder();"> <<< </button>
+        <button type="button" id="adelantar" onclick="adelantar();"> >>> </button>
+      </section>
 
-    <section>
-      <button type="button" id="subirVolumen" onclick="subirVolumen();" >V++</button>
+      <section>
+        <button type="button" id="bajarVolumen" onclick="bajarVolumen();" >V--</button>
         <input id="volumen" type="range" name="" value="50" min="" max="100" width="100px" onchange="subirYBajarVolumen();"/>
-      <button type="button" id="bajarVolumen" onclick="bajarVolumen();" >V--</button>
-    </section>
+        <button type="button" id="subirVolumen" onclick="subirVolumen();" >V++</button>
+      </section>
+
+    </article>
+
 
 
     <script type="text/javascript" src="assets/js/javascript.js">

@@ -1,6 +1,8 @@
 function reproducir(){
   var reproducir =document.getElementById("audio");
+  var avance=document.getElementById("avance");
   reproducir.play();
+  avance.max = document.getElementById("audio").duration;
 }
 
 function pausar(){
@@ -15,11 +17,18 @@ function parar(){
 }
 
 function subirVolumen(){
-  document.getElementById("audio").volume+=0.1
+  var player = document.getElementById("audio");
+  if(player.volume<1){
+    player.volume+=0.1
+  }
+
 }
 
 function bajarVolumen(){
-   document.getElementById("audio").volume-=0.1
+   var player = document.getElementById("audio");
+   if(player.volume>=0.1){
+     player.volume-=0.1
+   }
 }
 
 function adelantar(){
@@ -36,8 +45,8 @@ function avanceBarra(){
   var avance=document.getElementById("avance");
   //console.log(avance);
   avance.value = document.getElementById("audio").currentTime;
-  avance.max = document.getElementById("audio").duration;
 }
+
 
 function subirYBajarVolumen(){
   var audio = document.getElementById("audio");
