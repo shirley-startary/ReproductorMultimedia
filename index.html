@@ -6,25 +6,28 @@
     <style media="screen">
       body{
         background-color:  #78d1dc ;
+        align: "center";
       }
       h1{
         font-family: cursive;
-        color:  #ec6f2c ;
+        color: #045a8e;
       }
       select{
         font-family: cursive;
-        color:  #ec6f2c ;
-        width: 310px;
-        height: 50px;
+        color:   #045a8e;
+        width: 240px;
+        height: 20px;
       }
       button{
+        background-color:   #40a3df  ;
         font-family: cursive;
-        color:  #ec6f2c ;
+        color:  #ffffff ;
       }
-      input{
-        color: yellow;
-        width: 310px;
-        height: 10px;
+      progress {
+        background-color: #ffffff;
+
+        width: 240px;
+        height: 15px;
       }
     </style>
   </head>
@@ -46,16 +49,17 @@
     <img src="" align="center" id="imagenCancion" alt="" width="200px" height="200px"  hidden=""><br>
 
 
-    <input id="avance" type="range" value="0" min="0" max=""/></br>
+    <progress id="avance" type="range" value="0" min="0" max="" width="310px" height="10"/></progress></br>
     <button type="button" id="play" onclick="reproducir();">Play</button>
     <button type="button" id="pause" onclick="pausar();" >Pause</button>
     <button type="button" id="stop" onclick="parar();" >Stop</button>
 
     <button type="button" id="adelantar" onclick="adelantar();"> >>> </button>
     <button type="button" id="retroceder" onclick="retroceder();"> <<< </button><br/>
+
     <section>
       <button type="button" id="subirVolumen" onclick="subirVolumen();" >V++</button>
-        <input id="volumen" type="range" name="" value="50" min="" max="100" onchange="subirYBajarVolumen();"/>
+        <input id="volumen" type="range" name="" value="50" min="" max="100" width="100px" onchange="subirYBajarVolumen();"/>
       <button type="button" id="bajarVolumen" onclick="bajarVolumen();" >V--</button>
     </section>
 
